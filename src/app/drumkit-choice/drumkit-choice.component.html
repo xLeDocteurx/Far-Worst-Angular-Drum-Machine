@@ -1,0 +1,24 @@
+<div class="content" role="main">
+	<h1>Choose your drum kit</h1>
+
+	<label>
+		Seach by drum kit name or author name :
+		<input type="text" [(ngModel)]="filterInput" (ngModelChange)="onFilterInputChange($event)"/>
+		<button (click)="resetFilter()">Reset filter</button>
+	</label>
+
+	<div>
+		Filtereds from : {{ filterInput }}
+	</div>
+
+	<ul *ngIf="filteredDrumKits.length > 0">
+		<app-drumkit-list-element *ngFor="let drumKit of filteredDrumKits" [drumKit]="drumKit"></app-drumkit-list-element>
+	</ul>
+	<div *ngIf="filteredDrumKits.length < 1 && filterInput != ''">
+		No result
+	</div>
+	<ul *ngIf="filterInput == ''">
+		<app-drumkit-list-element *ngFor="let drumKit of drumKits" [drumKit]="drumKit"></app-drumkit-list-element>
+	</ul>
+
+</div>
