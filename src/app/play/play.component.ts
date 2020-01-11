@@ -30,9 +30,6 @@ export class PlayComponent implements OnInit {
 		this.selectedDrumKit = this.drumKitService.getSelectedDrumKit()
 		if(this.selectedDrumKit)
 			this.loadDrumKit();
-
-		console.log('this.drumKitService.getSelectedDrumKit()', this.drumKitService.getSelectedDrumKit())
-		console.log('this.selectedDrumKit', this.selectedDrumKit)
 	}
 
 	loadDrumKit(): void {

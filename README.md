@@ -1,5 +1,8 @@
 # Far Worst Angular Drum Machine
 
+Try it here : [https://xledocteurx.github.io/Far-Worst-Angular-Drum-Machine](https://xledocteurx.github.io/Far-Worst-Angular-Drum-Machine)
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 
 ## Development server
