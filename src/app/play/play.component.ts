@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 // import p5 from 'p5';
@@ -11,7 +11,7 @@ import { DrumKitService } from '../drum-kit.service'
   templateUrl: './play.component.html',
   styleUrls: ['./play.component.css']
 })
-export class PlayComponent implements OnChanges, OnInit, OnDestroy {
+export class PlayComponent implements OnInit {
 
 	selectedDrumKit: DrumKit;
 
@@ -26,22 +26,13 @@ export class PlayComponent implements OnChanges, OnInit, OnDestroy {
 		this.router.navigateByUrl('/choose-kit')
   	}
 
-	ngOnChanges() {
-		console.log('onChanges()')
-	}
-
 	ngOnInit() {
-		console.log('onInit()')
 		this.selectedDrumKit = this.drumKitService.getSelectedDrumKit()
 		if(this.selectedDrumKit)
 			this.loadDrumKit();
 
 		console.log('this.drumKitService.getSelectedDrumKit()', this.drumKitService.getSelectedDrumKit())
 		console.log('this.selectedDrumKit', this.selectedDrumKit)
-	}
-
-	ngOnDestroy() {
-		console.log('onDestroy()')
 	}
 
 	loadDrumKit(): void {
