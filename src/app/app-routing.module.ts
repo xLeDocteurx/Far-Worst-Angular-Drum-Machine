@@ -11,9 +11,6 @@ const routes: Routes = [
 	{
 		path: '',
 		component: HomeComponent,
-		data: {
-			appName: 'lol'
-		}
 	},
 	{
 		path: 'choose-kit',
@@ -30,7 +27,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+  	RouterModule.forRoot(routes),
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

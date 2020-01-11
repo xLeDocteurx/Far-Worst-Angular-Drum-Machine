@@ -6,3 +6,29 @@
   flex-direction: column;
   align-items: center;
 }
+
+.order-options-container {
+    /*display: flex;*/
+    /*flex-direction: row;*/
+}
+
+.order-options-container {
+    /*display: flex;*/
+    /*flex-direction: row;*/
+	display: inline-block;
+    /*width: auto;*/
+}
+
+.order-options {
+	display: inline-block;
+}
+
+.search-form {
+	/*margin-left: auto;*/
+	/*display: inline-block;*/
+	/*width: auto;*/
+}
+
+.grey-icon {
+	color: grey;
+}

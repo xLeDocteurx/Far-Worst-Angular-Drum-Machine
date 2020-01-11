@@ -1,6 +1,9 @@
-<li>
-	Author: {{ drumKit.author }}
-	<br>
-	Name: {{ drumKit.name }}
-	<hr>
-</li>
+<button mat-list-item (click)="selectDrumKit()">
+	<mat-icon matListIcon>music_video</mat-icon>
+	<h3 matLine>Name: {{ drumKit.name }}</h3>
+	<p matLine>
+		<span>Author: {{ drumKit.author }}</span>
+		 / 
+		<span class="demo-2">Number of samples: {{ drumKit.samples.length }}</span>
+	</p>
+</button>

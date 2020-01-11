@@ -13,6 +13,15 @@ import { DrumkitListElementComponent } from './drumkit-choice/drumkit-list-eleme
 import { PlayComponent } from './play/play.component';
 import { E404Component } from './e404/e404.component';
 
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +37,17 @@ import { E404Component } from './e404/e404.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
+    MatIconModule,
+    MatCardModule,
+    MatButtonModule,
+    MatChipsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatListModule,
+    MatGridListModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

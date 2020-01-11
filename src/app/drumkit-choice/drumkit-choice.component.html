@@ -1,24 +1,60 @@
 <div class="content" role="main">
 	<h1>Choose your drum kit</h1>
 
-	<label>
-		Seach by drum kit name or author name :
-		<input type="text" [(ngModel)]="filterInput" (ngModelChange)="onFilterInputChange($event)"/>
-		<button (click)="resetFilter()">Reset filter</button>
-	</label>
+	<mat-card>
 
-	<div>
-		Filtereds from : {{ filterInput }}
-	</div>
+		<mat-card-content class="order-options-container">
+			<div class="order-options-container">
+				Order options : 
+				<div class="order-options">
+					name
+					<button mat-button (click)="sortByName()">
+						<mat-icon>arrow_drop_up</mat-icon>
+					</button>
+					<button mat-button (click)="sortByNameReverse()">
+						<mat-icon>arrow_drop_down</mat-icon>
+					</button>
+				</div>
+				<div class="order-options">
+					author
+					<button mat-button (click)="sortByAuthor()">
+						<mat-icon>arrow_drop_up</mat-icon>
+					</button>
+					<button mat-button (click)="sortByAuthorReverse()">
+						<mat-icon>arrow_drop_down</mat-icon>
+					</button>
+				</div>
+				<div class="order-options">
+					number of samples
+					<button mat-button (click)="sortByNumberOfSamples()">
+						<mat-icon>arrow_drop_up</mat-icon>
+					</button>
+					<button mat-button (click)="sortByNumberOfSamplesReverse()">
+						<mat-icon>arrow_drop_down</mat-icon>
+					</button>
+				</div>
+			</div>
 
-	<ul *ngIf="filteredDrumKits.length > 0">
-		<app-drumkit-list-element *ngFor="let drumKit of filteredDrumKits" [drumKit]="drumKit"></app-drumkit-list-element>
-	</ul>
-	<div *ngIf="filteredDrumKits.length < 1 && filterInput != ''">
-		No result
-	</div>
-	<ul *ngIf="filterInput == ''">
-		<app-drumkit-list-element *ngFor="let drumKit of drumKits" [drumKit]="drumKit"></app-drumkit-list-element>
-	</ul>
+			<mat-form-field class="search-form">
+				<mat-label>Seach by drum kit name or author name</mat-label>
+				<input matInput placeholder="" [(ngModel)]="filterInput" (ngModelChange)="onFilterInputChange()">
+				
+				<mat-icon matSuffix *ngIf="filterInput == ''" class="grey-icon">search</mat-icon>
+				<mat-icon matSuffix *ngIf="filterInput != ''" (click)="resetFilter()">clear</mat-icon>
+			</mat-form-field>
+
+			<hr>
+		</mat-card-content>
+
+		<mat-card-content>
+			<mat-action-list *ngIf="filteredDrumKits.length > 0">
+				<app-drumkit-list-element *ngFor="let drumKit of filteredDrumKits" [drumKit]="drumKit"></app-drumkit-list-element>
+			</mat-action-list>
+			<div *ngIf="filteredDrumKits.length < 1 && filterInput != ''">
+				No result
+			</div>
+		</mat-card-content>
+
+	</mat-card>
 
 </div>

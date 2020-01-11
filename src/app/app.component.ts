@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { DrumKit } from './drumkit';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  appName: string = 'Far Worst Angular Drum Machine';
+
+	appName: string = 'Far Worst Angular Drum Machine';
+
+	constructor() { }
+
 }

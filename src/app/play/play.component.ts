@@ -1,23 +1,66 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 
-import p5 from 'p5';
+// import p5 from 'p5';
+
+import { DrumKit } from '../drumkit'
+import { DrumKitService } from '../drum-kit.service'
 
 @Component({
   selector: 'app-play',
   templateUrl: './play.component.html',
   styleUrls: ['./play.component.css']
 })
-export class PlayComponent implements OnInit {
+export class PlayComponent implements OnChanges, OnInit, OnDestroy {
+
+	selectedDrumKit: DrumKit;
+
+	audioElements = []
 
 	p5;
 
-  	constructor() { }
+  	constructor(private drumKitService: DrumKitService, private router: Router) {
+  	}
 
-	ngOnInit() {
-	  	this.createCanvas();
+  	goToChooseDrumKit(): void {
+		this.router.navigateByUrl('/choose-kit')
+  	}
+
+	ngOnChanges() {
+		console.log('onChanges()')
 	}
 
-	private createCanvas() {
+	ngOnInit() {
+		console.log('onInit()')
+		this.selectedDrumKit = this.drumKitService.getSelectedDrumKit()
+		if(this.selectedDrumKit)
+			this.loadDrumKit();
+
+		console.log('this.drumKitService.getSelectedDrumKit()', this.drumKitService.getSelectedDrumKit())
+		console.log('this.selectedDrumKit', this.selectedDrumKit)
+	}
+
+	ngOnDestroy() {
+		console.log('onDestroy()')
+	}
+
+	loadDrumKit(): void {
+		this.audioElements = this.selectedDrumKit.samples.map((sample) => {
+			return new Audio(sample.path);
+		})
+	}
+
+	playAudioElement(index): void {
+		this.stopAudioElement(index)
+		this.audioElements[index].play()
+	}
+
+	stopAudioElement(index): void {
+		this.audioElements[index].pause();
+	    this.audioElements[index].currentTime = 0;
+	}
+
+	/* private createCanvas() {
 	  	this.p5 = new p5(this.sketch);
 	}
 
@@ -44,6 +87,6 @@ export class PlayComponent implements OnInit {
 	    p.windowResized = function() {
 	        resizeCanvas();
 	    }
-	}
+	} */
 
 }

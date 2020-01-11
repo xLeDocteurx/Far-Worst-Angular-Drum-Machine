@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
-import { DRUMKITS, DrumKit } from '../../drumkit'
+import { DrumKit } from '../../drumkit'
+import { DrumKitService } from '../../drum-kit.service'
 
 @Component({
   selector: 'app-drumkit-list-element',
@@ -11,9 +13,14 @@ export class DrumkitListElementComponent implements OnInit {
 
 	@Input() drumKit: DrumKit;
 
-	constructor() {
+	constructor(private drumKitService: DrumKitService, private router: Router) {
 	}
 
 	ngOnInit() {
+	}
+
+	selectDrumKit() {
+		this.drumKitService.setSelectedDrumKit(this.drumKit)
+		this.router.navigateByUrl('/play')
 	}
 }
