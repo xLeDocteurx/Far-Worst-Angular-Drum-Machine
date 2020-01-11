@@ -14,7 +14,16 @@ export const DRUMKITS: DrumKit[] = [
 	{
 		author: 'Akai',
 		name: 'MPC2000 01',
-		samples: []
+		samples: [
+			{name:'Hat Open', path:'../assets/akai/drumhits/HATS/HH_JHatOp1.wav'},
+			{name:'Hat Closed', path:'../assets/akai/drumhits/HATS/HH_Hat1.wav'},
+			{name:'Crash 1', path:'../assets/akai/drumhits/CYMBALS/HH_Crash8.wav'},
+			{name:'Crash 2', path:'../assets/akai/drumhits/CYMBALS/HH_JRideHrd3.wav'},
+			{name:'Kick 1', path:'../assets/akai/drumhits/KICKS/HH_JKick2.wav'},
+			{name:'Kick 2', path:'../assets/akai/drumhits/KICKS/HH_Kick6.wav'},
+			{name:'Snare', path:'../assets/akai/drumhits/SNARES/HH_JSnare32.wav'},
+			{name:'Rim Shot', path:'../assets/akai/drumhits/SNARES/HH_Snare20.wav'},
+		]
 	},
 	{
 		author: 'Mad Zack',
@@ -103,7 +112,7 @@ export const DRUMKITS: DrumKit[] = [
 			{name:'Jazz 2', path:'../assets/factory_samples/Untersitzer/jazz_times_2.wav'},
 			{name:'Sub Kick', path:'../assets/factory_samples/Untersitzer/sub_kick.wav'},
 			{name:'Kick 2', path:'../assets/factory_samples/Untersitzer/tuddle.wav'},
-			{name:'Turn It', path:'../assets/factory_samples/Untersitzer/turn_it.wav'}
+			{name:'Turn It', path:'../assets/factory_samples/Untersitzer/turn_it.wav'},
 		]
 	}
 ];
