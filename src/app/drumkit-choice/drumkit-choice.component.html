@@ -2,34 +2,33 @@
 	<h1>Choose your drum kit</h1>
 
 	<mat-card>
-
 		<mat-card-content class="order-options-container">
 			<div class="order-options-container">
 				Order options : 
 				<div class="order-options">
 					name
-					<button mat-button (click)="sortByName()">
+					<button mat-button (click)="sortByName()" [disabled]="isButtonDisabled('name')">
 						<mat-icon>arrow_drop_up</mat-icon>
 					</button>
-					<button mat-button (click)="sortByNameReverse()">
+					<button mat-button (click)="sortByNameReverse()" [disabled]="isButtonDisabled('nameReverse')">
 						<mat-icon>arrow_drop_down</mat-icon>
 					</button>
 				</div>
 				<div class="order-options">
 					author
-					<button mat-button (click)="sortByAuthor()">
+					<button mat-button (click)="sortByAuthor()" [disabled]="isButtonDisabled('author')">
 						<mat-icon>arrow_drop_up</mat-icon>
 					</button>
-					<button mat-button (click)="sortByAuthorReverse()">
+					<button mat-button (click)="sortByAuthorReverse()" [disabled]="isButtonDisabled('authorReverse')">
 						<mat-icon>arrow_drop_down</mat-icon>
 					</button>
 				</div>
 				<div class="order-options">
 					number of samples
-					<button mat-button (click)="sortByNumberOfSamples()">
+					<button mat-button (click)="sortByNumberOfSamples()" [disabled]="isButtonDisabled('numberOfSamples')">
 						<mat-icon>arrow_drop_up</mat-icon>
 					</button>
-					<button mat-button (click)="sortByNumberOfSamplesReverse()">
+					<button mat-button (click)="sortByNumberOfSamplesReverse()" [disabled]="isButtonDisabled('numberOfSamplesReverse')">
 						<mat-icon>arrow_drop_down</mat-icon>
 					</button>
 				</div>

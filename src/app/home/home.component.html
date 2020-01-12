@@ -6,7 +6,7 @@
     This is my first Angular project.<br>
     I tried as much as possible to manage the architechture with good practices.<br>
     It is a simple musical app where you choose a drumkit and then you can play with it like on a drum machine.
-    For now now it is ment to be played on a touch screen device like a tablet or a big screen cellphone.<br>
+    For now it is ment to be played on a touch screen device like a tablet or a big screen cellphone.<br>
     Later I will implement MIDI input ( to get inputs from a physical keyboard or any MIDI device ) and keyboard ( to get inputs from either way a computer keyboard or a Makey Makey )<br>
     Some drumkit creation would be nice too but I would have to dive deeper into the Angular docs.
   </p>
@@ -15,12 +15,13 @@
   <ul>
     <li>
       A simple solution to order/filter drumkits in the "choose a drumkit" page's list<br>
-      I only display a copy of the drumkits, called "filteredDrumKits". When a search input is provided, it serves at receiving the filtered results. When no search input is provided it is the same as the original drumkits array.<br>
+      I only display a copy of the drumkits array, called "filteredDrumKits".<br>
+      When a search input is provided, it serves at receiving the filtered results. When no search input is provided it is the same as the original drumkits array.<br>
       That same array is used when ordering the results.
     </li>
     <li>
       Angular services to make some data available to the whole app.<br>
-      If I had more time to spend on this app I would have tried to implement a Flux
+      If I had more time to spend on this app I would have tried to implement a services Flux architechture.
     </li>
     <li>
       Angular Material library to style the components and make use of multitouch screen on tablets
