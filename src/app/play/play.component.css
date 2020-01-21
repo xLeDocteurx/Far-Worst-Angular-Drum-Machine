@@ -1,16 +1,27 @@
-#canvas-container {
-	/*display: block;*/
-	/*flex: 1;*/
-	padding: 25px;
-}
-
 .content {
   /*display: flex;*/
-  margin: 32px auto;
-  padding: 0 16px;
-  max-width: 960px;
+  /* margin: 32px auto; */
+  /* padding: 0 16px; */
+  /* max-width: 960px; */
   /*flex-direction: column;*/
   /*align-items: center;*/
+}
+
+#my-canvas {
+  /* border: 5px solid red; */
+  /* width: 100px; */
+  /* height: 100px; */
+}
+
+#my-video {
+  /* display: none; */
+}
+
+#canvas-container {
+	/* display: block; */
+	/*flex: 1;*/
+	/*padding: 25px;*/
+  height: 100%;
 }
 
 .pads-container {

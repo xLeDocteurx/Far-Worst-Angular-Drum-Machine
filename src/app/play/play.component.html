@@ -1,20 +1,20 @@
-<div class="content">
+<canvas id="my-canvas" #myCanvas></canvas>
 
-	<div *ngIf="selectedDrumKit == null">
+<video id="my-video" playsinline #myVideo></video>
+<!-- <div id="canvas-container"></div> -->
+
+<!-- <div class="content"> -->
+	<!-- <div id="canvas-container" *ngIf="selectedDrumKit != null"></div> -->
+
+	<!-- <div *ngIf="selectedDrumKit == null">
 		Please, choose a drumkit before playing
 		<hr>
 		<button mat-raised-button (click)="goToChooseDrumKit()" color="primary">Choose your drumkit</button>
-	</div>
-	<!-- <div *ngIf="selectedDrumKit != null">PAS NULL</div> -->
+	</div> -->
 
-<!-- 	<div *ngIf="selectedDrumKit == null">
-		<p>Please, choose a drumkit before playing</p>
-		<button mat-raised-button (click)="goToChooseDrumKit()" color="primary">Choose your drumkit</button>
-	<div> -->
-
-	<mat-grid-list *ngIf="selectedDrumKit != null" cols="4" rowHeight="fit" gutterSize="10px" class="pads-container">
+	<!-- <mat-grid-list *ngIf="selectedDrumKit != null" cols="4" rowHeight="fit" gutterSize="10px" class="pads-container">
 		<mat-grid-tile mat-list-item *ngFor="let sample of selectedDrumKit.samples; index as i" (click)="playAudioElement(i)" class="pad">
 			{{ sample.name }}
 		</mat-grid-tile>
-	</mat-grid-list>
-</div>
+	</mat-grid-list> -->
+<!-- </div> -->

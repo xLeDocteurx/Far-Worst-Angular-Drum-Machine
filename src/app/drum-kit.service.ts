@@ -7,19 +7,19 @@ import { DrumKit, DRUMKITS } from './drumkit'
 })
 export class DrumKitService {
 
-	selectedDrumKit: DrumKit;
+	selectedDrumKit: DrumKit = null;
 
 	constructor() { }
 
-  	getDrumKits(): DrumKit[] {
+  	getDrumKits(): Array<DrumKit> {
 		return DRUMKITS;
 	}
 
-	getSelectedDrumKit() {
+	get getSelectedDrumKit(): DrumKit {
 		return this.selectedDrumKit;
 	}
 
-	setSelectedDrumKit(drumKit): void {
+	set setSelectedDrumKit(drumKit) {
 		this.selectedDrumKit = drumKit;
 	}
 }
