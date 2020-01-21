@@ -1,17 +1,5 @@
 import * as posenet from '@tensorflow-models/posenet';
 
-class PoseNet {
-
-    network;
-
-    constructor() {
-
-    }
-
-    
-
-}
-
 // export async function loadNeuralNetwork(): Promise<object> {
 export async function loadNeuralNetwork() {
 
