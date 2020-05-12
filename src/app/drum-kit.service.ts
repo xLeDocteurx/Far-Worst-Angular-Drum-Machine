@@ -11,7 +11,7 @@ export class DrumKitService {
 
 	constructor() { }
 
-  	getDrumKits(): Array<DrumKit> {
+  	getDrumKits(): DrumKit[] {
 		return DRUMKITS;
 	}
 
@@ -19,7 +19,8 @@ export class DrumKitService {
 		return this.selectedDrumKit;
 	}
 
-	set setSelectedDrumKit(drumKit) {
+	// set setSelectedDrumKit(drumKit: DrumKit) {
+	setSelectedDrumKit(drumKit: DrumKit): void {
 		this.selectedDrumKit = drumKit;
 	}
 }

@@ -17,7 +17,7 @@ export class DrumkitChoiceComponent implements OnInit {
 
 	drumKits: DrumKit[];
 	filteredDrumKits: DrumKit[];
-	filterInput: string;
+	filterInput: string = '';
 
 	constructor(private drumKitService: DrumKitService) {
 	}
@@ -29,7 +29,6 @@ export class DrumkitChoiceComponent implements OnInit {
 	getDrumKits(): void {
 		this.drumKits = this.drumKitService.getDrumKits()
 		this.filteredDrumKits = this.drumKits;
-		this.filterInput = '';
 	}
 
 	isButtonDisabled(input) {

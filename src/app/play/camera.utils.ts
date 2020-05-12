@@ -4,22 +4,22 @@ function isMobile(): Boolean {
     return isAndroid || isIOS;
 }
 
-async function setupCamera(videoElement): Promise<HTMLVideoElement> {
+async function setupCamera(videoElement: HTMLVideoElement, width: number, height: number): Promise<HTMLVideoElement> {
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
       throw new Error('Browser API navigator.mediaDevices.getUserMedia not available');
     }
-  
+
     const video = videoElement;
-    video.width = video.clientWidth;
-    video.height = video.clientHeight;
-  
+    video.width = width;
+    video.height = height;
+
     const stream = await navigator.mediaDevices.getUserMedia({
-      'audio': false,
-      'video': {
-        facingMode: 'user',
-        width: isMobile() ? undefined : video.clientWidth,
-        height: isMobile() ? undefined : video.clientHeight,
-      },
+        'audio': false,
+        'video': {
+            facingMode: 'user',
+            width: isMobile() ? undefined : video.width,
+            height: isMobile() ? undefined : video.height,
+        },
     });
     video.srcObject = stream;
   
@@ -30,9 +30,9 @@ async function setupCamera(videoElement): Promise<HTMLVideoElement> {
     });
 }
 
-export async function loadVideo(videoElement): Promise<HTMLVideoElement> {
+export async function loadVideo(videoElement: HTMLVideoElement, width: number, height: number): Promise<HTMLVideoElement> {
     try {
-        const video = await setupCamera(videoElement);
+        const video = await setupCamera(videoElement, width, height);
         video.play();
     
         return video;

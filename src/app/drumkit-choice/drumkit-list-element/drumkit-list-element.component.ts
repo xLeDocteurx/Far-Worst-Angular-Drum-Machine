@@ -19,8 +19,8 @@ export class DrumkitListElementComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	selectDrumKit() {
-		this.drumKitService.setSelectedDrumKit(this.drumKit)
-		this.router.navigateByUrl('/play')
+	selectDrumKit(): void {
+		this.drumKitService.setSelectedDrumKit(this.drumKit);
+		this.router.navigateByUrl('/play');
 	}
 }
